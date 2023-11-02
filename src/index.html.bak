@@ -35,7 +35,7 @@
 
           <li><a class="efeito" href="#">SOBRE</a></li>
 
-          <li><a class="efeito" href="./tabela.html">SOLICITAÇÕES</a></li>
+          <li><a class="efeito" href="./assets/tabela/tabela.html">SOLICITAÇÕES</a></li>
         </ul>
       </nav>
     </header>

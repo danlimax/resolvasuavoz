@@ -23,21 +23,45 @@
     <!--imagem logo-->
     <!--barra de navegação-->
     <header>
-      <nav class="navbar">
-        <a href=""
-          ><img
-            class="img1"
-            src="./assets/logo.svg"
-            alt="Logo clicavel ilustrativa de um megafone do ResolvaSuaVoz"
-        /></a>
-        <ul class="navbar-list">
-          <li><a class="efeito" href="#">INICIO</a></li>
-
-          <li><a class="efeito" href="#">SOBRE</a></li>
-
-          <li><a class="efeito" href="./solicitacoes.html">SOLICITAÇÕES</a></li>
-        </ul>
+      <nav class="nav-bar">
+        <div>
+          <a href=""><img class="logo" src="./assets/logo.svg" /></a>
+          <a href=""
+            ><img class="logo-mobile" src="./assets/logo.svg"
+          /></a>
+        </div>
+        <div class="nav-list">
+          <ul>
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a href="./solicitacoes.html" class="nav-link">Solicitações</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">Sobre</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu-icon">
+          <button onclick="menuShow()">
+            <img class="icon" src="./assets/menu_white_36dp.svg" />
+          </button>
+        </div>
       </nav>
+      <div class="mobile-menu">
+        <ul>
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a href="./solicitacoes.html" class="nav-link">Solicitações</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Sobre</a>
+          </li>
+        </ul>
+      </div>
     </header>
     <!--carrossel de imagens-->
     <div
@@ -113,39 +137,33 @@
       <div class="row d-flex justify-content-around">
         <div class="card" style="width: 17rem">
           <div class="card-body">
-            <h5 class="card-title">Quem somos nos?</h5>
+            <a href="#" class="card-link"><h5 class="card-title">Pagina inical</h5></a>
             <p class="card-text">
-              Um exemplo de texto rápido para construir o título do card e fazer
-              preencher o conteúdo do card.
+              Aqui voce encontrara uma breve informação sobre a navegação do site são elas Incio, 
+              solicitações e sobre.
             </p>
-            <a href="#" class="card-link">Outro link</a>
           </div>
         </div>
         <div class="card" style="width: 17rem">
           <div class="card-body">
-            <h5 class="card-title">Proposito do projeto</h5>
+            <a href="#" class="card-link"><h5 class="card-title">Solicitações</h5></a>
             <p class="card-text">
-              Um exemplo de texto rápido para construir o título do card e fazer
-              preencher o conteúdo do card.
+                Voce pode abri uma reclamação sobre abastecimento de água, esgotamento sanitário, limpeza urbana, drenagem urbana, manejos de resíduos sólidos e de águas pluviais
             </p>
-            <a href="#" class="card-link">Outro link</a>
           </div>
         </div>
         <div class="card" style="width: 17rem">
           <div class="card-body">
-            <h5 class="card-title">Sobre o projeto</h5>
+            <a href="#" class="card-link"><h5 class="card-title">Sobre</h5></a>
             <p class="card-text">
-              Um exemplo de texto rápido para construir o título do card e fazer
-              preencher o conteúdo do card.
+              
             </p>
-            <a href="#" class="card-link">Outro link</a>
           </div>
         </div>
       </div>
     </div>
     <!--roda pe com redes sociais-->
     <footer>
-      <nav></nav>
       <div class="conteiner-footer">
         <a href="#"
           ><i
@@ -173,7 +191,18 @@
         &copy; Todos os diretios resevados Lions club International 2023
       </p>
     </footer>
-
+    <script>
+      function menuShow() {
+        let menuMobile = document.querySelector(".mobile-menu");
+        if (menuMobile.classList.contains("open")) {
+          menuMobile.classList.remove("open");
+          document.querySelector(".icon").src = "./assets/menu_white_36dp.svg";
+        } else {
+          menuMobile.classList.add("open");
+          document.querySelector(".icon").src = "./assets/close_white_36dp.svg";
+        }
+      }
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

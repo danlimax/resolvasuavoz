@@ -6,15 +6,6 @@ h1 /*Título*/ {
 
 #tabela /*Tabela*/ {
   border-collapse: collapse;
-  border: 2px solid #000000;
-  /*border-spacing: 0px 10px;*/
-  width: 50%;
-  position: relative;
-  left: 25%;
-  right: 25%;
-  /*margin-top: 100px;
-	margin-left: 10px;
-	border-radius: 15px;*/
   background-color: #fff;
 }
 

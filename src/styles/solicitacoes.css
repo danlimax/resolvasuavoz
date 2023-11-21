@@ -9,7 +9,7 @@ h1 /*Título*/ {
   background-color: #fff;
 }
 
-#tabela th /*Categorias*/ {
+#tabela thead tr th /*Categorias*/ {
   padding: 5px;
   font-size: 1em;
   color: #020202;

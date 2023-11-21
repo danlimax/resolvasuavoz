@@ -21,8 +21,12 @@
     <header>
       <nav class="nav-bar">
         <div>
-          <a href=""><img class="logo" src="./assets/logo.svg" /></a>
-          <a href=""><img class="logo-mobile" src="./assets/logo.svg" /></a>
+          <a href="./index.html"
+            ><img class="logo" src="./assets/logo.svg"
+          /></a>
+          <a href="./index.html"
+            ><img class="logo-mobile" src="./assets/logo.svg"
+          /></a>
         </div>
         <div class="nav-list">
           <ul>
@@ -57,8 +61,49 @@
         </ul>
       </div>
     </header>
-    <main class="container mh-100vh">
-      <section class="content-container">
+    <main class="container vh-100">
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="modalSolicitacoes"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered modal-lg"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="TituloModalCentralizado">
+                Formulário de solicitação
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Fechar"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">...</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button type="button" class="btn btn-primary">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="d-flex flex-column mt-5">
         <div class="button-container">
           <img
             src="./assets/bullhorn-solid.svg"
@@ -75,83 +120,49 @@
           >
         </div>
 
-        <!-- Modal -->
-        <div
-          class="modal fade"
-          id="modalSolicitacoes"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="TituloModalCentralizado"
-          aria-hidden="true"
-        >
-          <div
-            class="modal-dialog modal-dialog-centered modal-lg"
-            role="document"
-          >
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="TituloModalCentralizado">
-                  Formulário de solicitação
-                </h5>
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Fechar"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">...</div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-dismiss="modal"
-                >
-                  Cancelar
-                </button>
-                <button type="button" class="btn btn-primary">Enviar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <table id="tabela" class="mw-100">
           <!--Tabela de Solicitações-->
-          <tr>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Assunto</th>
-            <th>Mensagem de Reclamação</th>
-            <th>Foto da Reclamação</th>
-          </tr>
-          <tr>
-            <td>Cleber Almeida de Jesus</td>
-            <td>cleberalmeida@email.com</td>
-            <td>Buraco na Rua</td>
-            <td>A rua ta tda emburacada e nao da pra passar de carro</td>
-            <td>foto.jpg</td>
-          </tr>
-          <tr>
-            <td>Cleber Almeida de Jesus</td>
-            <td>cleberalmeida@email.com</td>
-            <td>Buraco na Rua</td>
-            <td>A rua ta tda emburacada e nao da pra passar de carro</td>
-            <td>foto.jpg</td>
-          </tr>
-          <tr>
-            <td>Cleber Almeida de Jesus</td>
-            <td>cleberalmeida@email.com</td>
-            <td>Buraco na Rua</td>
-            <td>A rua ta tda emburacada e nao da pra passar de carro</td>
-            <td>foto.jpg</td>
-          </tr>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Assunto</th>
+              <th>Mensagem de Reclamação</th>
+              <th>Foto da Reclamação</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
         </table>
       </section>
     </main>
-
-    <script src="./js/requisicoes.js"></script>
+    <footer>
+      <div class="conteiner-footer">
+        <a href="#"
+          ><i
+            class="fa-brands fa-square-instagram"
+            style="color: #ffffff; font-size: 3.4em"
+            alt="Instagram"
+          ></i
+        ></a>
+        <a href="#"
+          ><i
+            class="fa-brands fa-square-facebook"
+            style="color: #ffffff; font-size: 3.4em"
+            alt="Facebook"
+          ></i
+        ></a>
+        <a href="#"
+          ><i
+            class="fa-brands fa-square-youtube"
+            style="color: #ffffff; font-size: 3.4em"
+            alt="Youtube"
+          ></i
+        ></a>
+      </div>
+      <p style="color: white">
+        &copy; Todos os diretios resevados Lions club International 2023
+      </p>
+    </footer>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -171,5 +182,18 @@
       src="https://kit.fontawesome.com/bba878b8aa.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      function menuShow() {
+        let menuMobile = document.querySelector(".mobile-menu");
+        if (menuMobile.classList.contains("open")) {
+          menuMobile.classList.remove("open");
+          document.querySelector(".icon").src = "./assets/menu_white_36dp.svg";
+        } else {
+          menuMobile.classList.add("open");
+          document.querySelector(".icon").src = "./assets/close_white_36dp.svg";
+        }
+      }
+    </script>
+    <script src="./js/requisicoes.js"></script>
   </body>
 </html>

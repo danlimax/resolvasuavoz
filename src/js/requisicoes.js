@@ -1,5 +1,6 @@
 "use strict";
-
+const tableElement = document.querySelector("#tabela");
+const tbodyElement = document.querySelector("tbody");
 // Metodo HTTP GET
 const getSolicitacoes = async () => {
   try {
@@ -12,14 +13,18 @@ const getSolicitacoes = async () => {
   }
 };
 
-const testeSolicitacoes = async () => {
+const renderizarSolicitacoes = async () => {
   const users = await getSolicitacoes();
   users.map((element) => {
-    console.log(element.nome);
-    console.log(element.email);
-    console.log(element.assunto);
-    console.log(element.mensagem);
-    console.log(element.urlImagem);
+    const createTr = document.createElement("tr");
+    createTr.innerHTML = `
+    <td>${element.nome}</td>
+    <td>${element.email}</td>
+    <td>${element.assunto}</td>
+    <td>${element.mensagem}</td>
+    <td>${element.urlImagem}</td>
+    `;
+    tbodyElement.append(createTr);
   });
 };
-testeSolicitacoes();
+renderizarSolicitacoes();

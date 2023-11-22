@@ -1,24 +1,45 @@
 "use strict";
 const tableElement = document.querySelector("#tabela");
 const tbodyElement = document.querySelector("tbody");
-const form = new FormData(document.querySelector("#form-solicitacoes"));
-const url = "https://localhost:3000/resolvasuavoz/solicitacoes ";
+
 // Metodo HTTP GET
+
 const getSolicitacoes = async () => {
   try {
-    const response = await fetch(`${url}`);
+    const response = await fetch(
+      "http://localhost:3000/resolvasuavoz/solicitacoes"
+    );
     return await response.json();
   } catch (error) {
     return [];
   }
 };
+
 const postSolicitacoes = async (res) => {
+  const nome = document.querySelector("#nome");
+  const email = document.querySelector("#email");
+  const assunto = document.querySelector("#assunto");
+  const mensagem = document.querySelector("#mensagem");
+  // const urlImagem = document.querySelector("#urlImagem");
+  const data = {
+    nome: nome.value,
+    email: email.value,
+    assunto: assunto.value,
+    mensagem: mensagem.value,
+    urlImagem: "https://google.com.br",
+  };
   try {
-    await fetch(`${url}`, {
-      method: "POST",
-      body: form,
-    });
-    console.log(res.data);
+    const request = await fetch(
+      "http://localhost:3000/resolvasuavoz/solicitacoes",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+    console.log(request.json());
   } catch (error) {
     return [];
   }
@@ -38,4 +59,13 @@ const renderizarSolicitacoes = async () => {
     tbodyElement.append(createTr);
   });
 };
+
 renderizarSolicitacoes();
+
+const postEvent = async () => {
+  await postSolicitacoes();
+};
+
+document
+  .querySelector("#form-solicitacoes")
+  .addEventListener("submit", postEvent);

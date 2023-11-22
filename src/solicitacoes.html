@@ -89,16 +89,59 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">...</div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Cancelar
-              </button>
-              <button type="button" class="btn btn-primary">Enviar</button>
+            <div class="modal-body">
+              <form id="form-solicitacoes">
+                <div class="form-group">
+                  <label for="nome">Nome</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nome"
+                    placeholder="Digite seu nome"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">E-mail</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Digite seu E-mail"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="assunto">Assunto</label>
+                  <select class="form-control" id="assunto">
+                    <option></option>
+                    <option>Saneamento</option>
+                    <option>Mobilidade Urbana</option>
+                    <option>Educação</option>
+                    <option>Saúde</option>
+                    <option>Infraestrutura</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="mensagem">Example textarea</label>
+                  <textarea
+                    class="form-control"
+                    style="resize: none"
+                    maxlength="500"
+                    id="mensagem"
+                    rows="3"
+                    placeholder="Digite sua mensagem até 500 caracteres"
+                  ></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Cancelar
+                  </button>
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

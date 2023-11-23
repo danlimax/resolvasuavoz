@@ -10,35 +10,58 @@
     />
 
     <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-svg" />
-    <link rel="stylesheet" href="./styles/global.css" />
-    <link rel="stylesheet" href="./styles/sobre.css" />
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/sobre.css" />
     <link rel="stylesheet" href="./styles/estilo.css" />
   </head>
   <body>
     <!--imagem logo-->
     <!--barra de navegação-->
     <header>
-      <nav class="navbar">
-        <a href="index.html"
-          ><img
-            class="img1"
-            src="./assets/logo.svg"
-            alt="Logo clicavel ilustrativa de um megafone do ResolvaSuaVoz"
-        /></a>
-        <ul class="navbar-list">
-          <li><a class="efeito" href="index.html">INICIO</a></li>
-
-          <li><a class="efeito" href="sobre.html">SOBRE</a></li>
-
-          <li><a class="efeito" href="./solicitacoes.html">SOLICITAÇÕES</a></li>
-        </ul>
+      <nav class="nav-bar">
+        <div>
+          <a href=""><img class="logo" src="./assets/logo.svg" /></a>
+          <a href=""><img class="logo-mobile" src="./assets/logo.svg" /></a>
+        </div>
+        <div class="nav-list">
+          <ul>
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a href="./solicitacoes.html" class="nav-link">Solicitações</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">Sobre</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu-icon">
+          <button onclick="menuShow()">
+            <img class="icon" src="./assets/menu_white_36dp.svg" />
+          </button>
+        </div>
       </nav>
+      <div class="mobile-menu">
+        <ul>
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a href="./solicitacoes.html" class="nav-link">Solicitações</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Sobre</a>
+          </li>
+        </ul>
+      </div>
     </header>
     <!--barra de navegação-->
 

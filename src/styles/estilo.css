@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 header{
   background-color: rgb(241, 240, 240);
 }
@@ -64,10 +65,54 @@ header{
 #carouselExampleIndicators {
   margin-bottom: 50px;
 }
+/* estilização para os card e noticias */
+#card-noticias{
+  margin-top: 20px;
+}
+.card{
+  
+  
+}
+
+.titulo{
+  background-color:#F1F0F0 ;
+  padding-top: 20px;
+  padding-bottom:20px;
+  text-align:center;
+  margin-top: 20px;
+  font-size: 2.5rem;
+  font-weight:600;
+  font-family: 'Roboto Slab', serif;
+}
+.card-img-doe{
+  height: 211px;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.card-img-meio{
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.card-img-ado{
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.card{
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.card img:hover{
+  transform: scale(1.05);
+}
+
 /*estilização do roda pe*/
 footer {
   width: 100%;
-  height: 110px;
+  height: 120px;
   text-align: center;
   padding: 20px;
   background-color: #2b3b54;
@@ -118,5 +163,8 @@ footer a i {
   }
   .open {
     display: block;
+  }
+  .card{
+    margin-bottom:20px;
   }
 }

@@ -54,7 +54,7 @@ const renderizarSolicitacoes = async () => {
     <td>${element.email}</td>
     <td>${element.assunto}</td>
     <td>${element.mensagem}</td>
-    <td>${element.urlImagem}</td>
+    <td><a href="${element.urlImagem}">${element.urlImagem}</a></td>
     `;
     tbodyElement.append(createTr);
   });

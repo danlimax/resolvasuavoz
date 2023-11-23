@@ -21,24 +21,49 @@
     <link rel="stylesheet" href="./styles/estilo.css" />
   </head>
   <body>
-    <!--imagem logo-->
+    
     <!--barra de navegação-->
     <header>
-      <nav class="navbar">
-        <a href=""
-          ><img
-            class="img1"
-            src="./assets/logo.svg"
-            alt="Logo clicavel ilustrativa de um megafone do ResolvaSuaVoz"
-        /></a>
-        <ul class="navbar-list">
-          <li><a class="efeito" href="/index.html">INICIO</a></li>
-
-          <li><a class="efeito" href="/sobre.html">SOBRE</a></li>
-
-          <li><a class="efeito" href="./solicitacoes.html">SOLICITAÇÕES</a></li>
-        </ul>
+      <nav class="nav-bar">
+        <div>
+          
+          
+          <!--imagem logo-->
+          <a href=""><img class="logo" src="./assets/logo.svg" /></a>
+          <a href=""><img class="logo-mobile" src="./assets/logo.svg" /></a>
+        </div>
+        <div class="nav-list">
+          <ul>
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a href="./solicitacoes.html" class="nav-link">Solicitações</a>
+            </li>
+            <li class="nav-item">
+              <a href="./sobre.html" class="nav-link">Sobre</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu-icon">
+          <button onclick="menuShow()">
+            <img class="icon" src="./assets/menu_white_36dp.svg" />
+          </button>
+        </div>
       </nav>
+      <div class="mobile-menu">
+        <ul>
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a href="./solicitacoes.html" class="nav-link">Solicitações</a>
+          </li>
+          <li class="nav-item">
+            <a href="./sobre.html" class="nav-link">Sobre</a>
+          </li>
+        </ul>
+      </div>
     </header>
     <!--carrossel de imagens-->
     <div
@@ -109,44 +134,80 @@
         <span class="sr-only">Próximo</span>
       </a>
     </div>
+    <p class="titulo">INFORMAÇÕES</p>
     <!--card de informaçoes-->
     <div class="container">
       <div class="row d-flex justify-content-around">
         <div class="card" style="width: 17rem">
           <div class="card-body">
-            <h5 class="card-title">Quem somos nos?</h5>
+            <a href="index.html" class="card-link"
+              ><h5 class="card-title">Pagina inicial</h5></a
+            >
             <p class="card-text">
-              Um exemplo de texto rápido para construir o título do card e fazer
-              preencher o conteúdo do card.
+              Aqui você encontrará uma breve informação sobre a navegação do
+              site são elas Incio, solicitações e sobre.
             </p>
-            <a href="#" class="card-link">Outro link</a>
           </div>
         </div>
         <div class="card" style="width: 17rem">
           <div class="card-body">
-            <h5 class="card-title">Proposito do projeto</h5>
+            <a href="solicitacoes.html" class="card-link"
+              ><h5 class="card-title">Solicitações</h5></a
+            >
             <p class="card-text">
-              Um exemplo de texto rápido para construir o título do card e fazer
-              preencher o conteúdo do card.
+              Você pode abrir uma reclamação sobre Saneamento, Mobilidade Urbana, Educação, Saúde e Infraestrutura.
             </p>
-            <a href="#" class="card-link">Outro link</a>
           </div>
         </div>
         <div class="card" style="width: 17rem">
           <div class="card-body">
-            <h5 class="card-title">Sobre o projeto</h5>
-            <p class="card-text">
-              Um exemplo de texto rápido para construir o título do card e fazer
-              preencher o conteúdo do card.
-            </p>
-            <a href="#" class="card-link">Outro link</a>
+            <a href="#" class="card-link"><h5 class="card-title">Sobre</h5></a>
+            <p class="card-text">Aqui você verá algumas informações sobre os desenvolvedores do site </p>
           </div>
         </div>
       </div>
     </div>
+    </div>
+
+    <p class="titulo">NOTÍCIAS</p>
+
+    <div class="container" id="card-noticias">
+      <div class="row d-flex justify-content-around">
+        <div class="card" style="width: 20rem">
+            <img class="card-img-doe" src="./assets/doador.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Doe Sangue</h5>
+            <p class="card-text">
+              Salve vidas, doe sangue! Sua contribuição pode fazer a diferença para alguém que precisa. A doação de sangue é um ato de solidariedade que não tem preço, mas seu valor é imensurável.
+            </p>
+          </div>
+        </div>
+        <div class="card" style="width: 20rem">
+          <img class="card-img-meio" src="./assets/ambiente.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Meio Ambinete</h5>
+            <p class="card-text">
+              Salvar o meio ambiente é essencial para garantir um futuro sustentável para as gerações futuras. Para alcançar esse objetivo, é fundamental agir agora. 
+            </p>
+          </div>
+        </div>
+        <div class="card" style="width: 20rem">
+          <img class="card-img-ado" src="./assets/adoção.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Campanha Adote um Pet</h5>
+            <p class="card-text">
+              A adoção de animais é um ato de amor e responsabilidade que beneficia não apenas os animais, mas também as pessoas e a sociedade como um todo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    
+    
     <!--roda pe com redes sociais-->
     <footer>
-      <nav></nav>
       <div class="conteiner-footer">
         <a href="#"
           ><i
@@ -174,7 +235,18 @@
         &copy; Todos os diretios resevados Lions club International 2023
       </p>
     </footer>
-
+    <script>
+      function menuShow() {
+        let menuMobile = document.querySelector(".mobile-menu");
+        if (menuMobile.classList.contains("open")) {
+          menuMobile.classList.remove("open");
+          document.querySelector(".icon").src = "./assets/menu_white_36dp.svg";
+        } else {
+          menuMobile.classList.add("open");
+          document.querySelector(".icon").src = "./assets/close_white_36dp.svg";
+        }
+      }
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

@@ -5,65 +5,264 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solicitações</title>
     <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-svg" />
-    <link rel="stylesheet" href="./global.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/estilo.css" />
     <link rel="stylesheet" href="./styles/solicitacoes.css" />
+    <link rel="stylesheet" href="./styles/modal.css" />
   </head>
   <body>
     <header>
-      <nav class="navbar">
-        <a href=""
-          ><img
-            class="img1"
-            src="./assets/logo.svg"
-            alt="Logo clicavel ilustrativa de um megafone do ResolvaSuaVoz"
-        /></a>
-        <ul class="navbar-list">
-          <li><a class="efeito" href="./index.html">INICIO</a></li>
-
-          <li><a class="efeito" href="./sobre.html">SOBRE</a></li>
-
-          <li><a class="efeito" href="./tabela.html">SOLICITAÇÕES</a></li>
-        </ul>
+      <nav class="nav-bar">
+        <div>
+          <a href="./index.html"
+            ><img class="logo" src="./assets/logo.svg"
+          /></a>
+          <a href="./index.html"
+            ><img class="logo-mobile" src="./assets/logo.svg"
+          /></a>
+        </div>
+        <div class="nav-list">
+          <ul>
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a href="./solicitacoes.html" class="nav-link">Solicitações</a>
+            </li>
+            <li class="nav-item">
+              <a href="./sobre.html" class="nav-link">Sobre</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu-icon">
+          <button onclick="menuShow()">
+            <img class="icon" src="./assets/menu_white_36dp.svg" />
+          </button>
+        </div>
       </nav>
+      <div class="mobile-menu">
+        <ul>
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a href="./solicitacoes.html" class="nav-link">Solicitações</a>
+          </li>
+          <li class="nav-item">
+            <a href="./sobre.html" class="nav-link">Sobre</a>
+          </li>
+        </ul>
+      </div>
     </header>
-    <table id="tabela">
-      <!--Tabela de Solicitações-->
-      <tr>
-        <th>Nome</th>
-        <th>Email</th>
-        <th>Assunto</th>
-        <th>Mensagem de Reclamação</th>
-        <th>Foto da Reclamação</th>
-      </tr>
-      <tr>
-        <td>Cleber Almeida de Jesus</td>
-        <td>cleberalmeida@email.com</td>
-        <td>Buraco na Rua</td>
-        <td>A rua ta tda emburacada e nao da pra passar de carro</td>
-        <td>foto.jpg</td>
-      </tr>
-      <tr>
-        <td>Cleber Almeida de Jesus</td>
-        <td>cleberalmeida@email.com</td>
-        <td>Buraco na Rua</td>
-        <td>A rua ta tda emburacada e nao da pra passar de carro</td>
-        <td>foto.jpg</td>
-      </tr>
-      <tr>
-        <td>Cleber Almeida de Jesus</td>
-        <td>cleberalmeida@email.com</td>
-        <td>Buraco na Rua</td>
-        <td>A rua ta tda emburacada e nao da pra passar de carro</td>
-        <td>foto.jpg</td>
-      </tr>
-    </table>
+    <main class="container vh-100">
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="modalSolicitacoes"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered modal-lg"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="TituloModalCentralizado">
+                Formulário de solicitação
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Fechar"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="form-solicitacoes">
+                <div class="form-group">
+                  <label for="nome">Nome</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nome"
+                    placeholder="Digite seu nome"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">E-mail</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Digite seu E-mail"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="assunto">Assunto</label>
+                  <select class="form-control" id="assunto">
+                    <option></option>
+                    <option>Saneamento</option>
+                    <option>Mobilidade Urbana</option>
+                    <option>Educação</option>
+                    <option>Saúde</option>
+                    <option>Infraestrutura</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="mensagem">Example textarea</label>
+                  <textarea
+                    class="form-control"
+                    style="resize: none"
+                    maxlength="500"
+                    id="mensagem"
+                    rows="3"
+                    placeholder="Digite sua mensagem até 500 caracteres"
+                  ></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Cancelar
+                  </button>
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="d-flex flex-column mt-5">
+        <div class="button-container">
+          <img
+            src="./assets/bullhorn-solid.svg"
+            alt="Icone de auto falante para cadastrar solicitação."
+            id="megafone-icone"
+            data-toggle="modal"
+            data-target="#modalSolicitacoes"
+          />
+          <label
+            for="cadastrar"
+            data-toggle="modal"
+            data-target="#modalSolicitacoes"
+            >Fazer solicitação</label
+          >
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped" id="tabela">
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Assunto</th>
+                <th scope="col">Mensagem</th>
+                <th scope="col">URLimagem</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="d-flex flex-wrap mw-100">
+          <div class="d-flex">
+            <img
+              src="./img/estatistica-atendidas.png"
+              class="w-50 img-fluid img-thumbnail"
+              alt=""
+            />
+            <img
+              src="./img/estatistica-zonas.png"
+              class="w-50 img-fluid img-thumbnail"
+              alt=""
+            />
+          </div>
+          <div class="d-flex">
+            <img
+              src="./img/estatistica-solicitacoes.png"
+              class="w-50 img-fluid img-thumbnail"
+              alt=""
+            />
+            <img
+              src="./img/estatistica-total-zonas.png"
+              class="w-50 img-fluid img-thumbnail"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="conteiner-footer">
+        <a href="#"
+          ><i
+            class="fa-brands fa-square-instagram"
+            style="color: #ffffff; font-size: 3.4em"
+            alt="Instagram"
+          ></i
+        ></a>
+        <a href="#"
+          ><i
+            class="fa-brands fa-square-facebook"
+            style="color: #ffffff; font-size: 3.4em"
+            alt="Facebook"
+          ></i
+        ></a>
+        <a href="#"
+          ><i
+            class="fa-brands fa-square-youtube"
+            style="color: #ffffff; font-size: 3.4em"
+            alt="Youtube"
+          ></i
+        ></a>
+      </div>
+      <p style="color: white">
+        &copy; Todos os diretios resevados Lions club International 2023
+      </p>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/bba878b8aa.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function menuShow() {
+        let menuMobile = document.querySelector(".mobile-menu");
+        if (menuMobile.classList.contains("open")) {
+          menuMobile.classList.remove("open");
+          document.querySelector(".icon").src = "./assets/menu_white_36dp.svg";
+        } else {
+          menuMobile.classList.add("open");
+          document.querySelector(".icon").src = "./assets/close_white_36dp.svg";
+        }
+      }
+    </script>
+    <script src="./js/requisicoes.js"></script>
   </body>
 </html>
